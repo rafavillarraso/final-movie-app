@@ -9,8 +9,8 @@ const Header = props =>{
             <span className="popular">Peliculas populares</span>
         </NavLink>
 
-        <NavLink to='/cartelera'>
-            <span className="cartelera">Hoy en cartelera</span>
+        <NavLink to='/now_playing'>
+            <span className="now_playing">Hoy en cartelera</span>
         </NavLink>
 
         <NavLink to='/upcoming'>
