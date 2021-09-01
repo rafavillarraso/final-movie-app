@@ -17,8 +17,8 @@ const Header = props =>{
             <span className="upcoming">Próximos estrenos</span>
         </NavLink>
 
-        <NavLink to='/top-rated'>
-            <span className="top-rated">Peliculas más votadas</span>
+        <NavLink to='/top_rated'>
+            <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
        
     </header>)
