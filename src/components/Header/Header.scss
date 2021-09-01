@@ -7,11 +7,14 @@ header {
     justify-content: space-around;
     color: white;
     background-color: $darkest;
-    span {
+    
+    a {
+        all:unset;
+
         cursor: pointer;
         padding: 20px;
     }
-    span:hover{
+    a:hover{
         background-color: $mostaza;
         color: black;
         letter-spacing: 0.1em;
