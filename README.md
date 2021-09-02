@@ -1,3 +1,10 @@
+Proyecto final con React  y react-router, para la creación de una web que muestra datos por medio solicitudes a la API de The Movie DB.
+
+El formateado de los componenetes se realiza con sass, y la pagina deployeada por Heroku se ubica en esta url: https://react-heroku-movieapp.herokuapp.com/popular
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
