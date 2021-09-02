@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Movies from './containers/Movies/Movies';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+
 function App() {
   return (
     <div>

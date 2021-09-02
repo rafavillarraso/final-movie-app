@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; 
 
 
 const Header = props =>{
@@ -20,6 +20,7 @@ const Header = props =>{
         <NavLink to='/top_rated'>
             <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
+        <div className='buscar'><input type="text" placeholder="buscar..." /></div>
        
     </header>)
 }
