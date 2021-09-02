@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, setState } from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom'; 
+import SearchBar from '../SearchBar/SearchBar';
 
 
-const Header = props =>{
+
+const Header = () =>{
+
     return (<header>
         <NavLink to='/popular'>
             <span className="popular">Peliculas populares</span>
@@ -20,8 +23,14 @@ const Header = props =>{
         <NavLink to='/top_rated'>
             <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
-        <div className='buscar'><input type="text" placeholder="buscar..." /></div>
-       
+        <SearchBar />
+        {/* <div><form className='buscar'>
+                <input 
+                    type="search" 
+                    placeholder="buscar..."
+                    />
+        </form>
+        </div> */}
     </header>)
 }
 
