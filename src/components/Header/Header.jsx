@@ -1,14 +1,15 @@
 import React, { useState, setState } from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom'; 
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../../containers/SearchBar/SearchBar';
+import Result from '../../containers/SearchBar/Result';
 
 
 
 const Header = () =>{
 
     return (<header>
-        <NavLink to='/popular'>
+         <NavLink to='/popular'>
             <span className="popular">Peliculas populares</span>
         </NavLink>
 
