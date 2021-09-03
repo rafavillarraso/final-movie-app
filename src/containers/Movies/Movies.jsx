@@ -16,4 +16,4 @@ const Movies = props =>{
     </div>
 }
 
-export default Movies;
+export default Movies;   
