@@ -22,7 +22,13 @@ header {
         transition: all 0.3s;
     }
 }
+.contenedorbuscar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
 
+}
 .buscar {
     width: 250px;
     input {
@@ -32,7 +38,9 @@ header {
     background-color: $grisclaro;
     border-radius: 50px;
     width: 100%;
-    padding-left: 1em;
+    padding: 1em;
     margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
     }
 }

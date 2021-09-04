@@ -1,19 +1,38 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Movie from '../../components/Movie/Movie';
+import React from 'react';
+import Movies from '../../containers/Movies/Movies';
 import './Result';
+import SearchBar from './SearchBar';
 
-const Result = props => {
-    const movieTitle = props.match.params.query;
-    const [movies,setMovies] = useState([]);
-    useEffect(()=>{
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d8d9fc93da62143ba1f2babedea9cc4e&language=en-US&page=1&include_adult=false&${movieTitle}`)
-        .then(res=>setMovies(res.data.results))
-        .catch(console.error)
-    },[movieTitle])
-    return <div className='movies'>
-        {movies.map(movie=><Movie key={movie.id} movie={movie} />)}
-        </div>
-};
+class Result extends React.Component{
+    state = {
+        results: [],
+        usedSearch: false
+    }
+
+    handleResults = (results) => {
+        this.setState ({results, usedSearch: true})
+    }
+
+    renderResults = () => {
+        return this.state.results.length === 0
+            ?<p>Results not found</p>
+            :<Movies movies={this.state.results} />
+    }
+
+    render(){
+        return(
+            <div>
+                <SearchBar onResults={this.handleResults}/>
+                {
+                    this.state.usedSearch
+                    ? this.renderResults()
+                    :<small></small>
+                }
+            </div>
+            
+        )
+    }
+
+}
 
 export default Result; 

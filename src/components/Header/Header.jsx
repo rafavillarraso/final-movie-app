@@ -1,15 +1,14 @@
-import React, { useState, setState } from 'react';
+import React from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom'; 
 import SearchBar from '../../containers/SearchBar/SearchBar';
 import Result from '../../containers/SearchBar/Result';
 
+const Header = () => {
 
-
-const Header = () =>{
-
+    
     return (<header>
-         <NavLink to='/popular'>
+        <NavLink to='/popular'>
             <span className="popular">Peliculas populares</span>
         </NavLink>
 
@@ -24,14 +23,8 @@ const Header = () =>{
         <NavLink to='/top_rated'>
             <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
-        <SearchBar />
-        {/* <div><form className='buscar'>
-                <input 
-                    type="search" 
-                    placeholder="buscar..."
-                    />
-        </form>
-        </div> */}
+        {/* <SearchBar /> */}
+     
     </header>)
 }
 
