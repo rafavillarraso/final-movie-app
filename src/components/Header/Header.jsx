@@ -3,11 +3,35 @@ import './Header.scss';
 import { NavLink } from 'react-router-dom'; 
 import SearchBar from '../../containers/SearchBar/SearchBar';
 import Result from '../../containers/SearchBar/Result';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Movie from '../../components/Movie/Movie';
 
-const Header = () => {
 
+class Header extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+          movies: ([]),
+          searchTerm:('')
+        }
+    }
+    handleSubmit = (event) => {
+        event.preventDefault();
     
-    return (<header>
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8d9fc93da62143ba1f2babedea9cc4e&language=en-US&page=1&include_adult=false&query=${this.state.searchTerm}`)
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            this.setState({movies: [...data.results]})                
+        })
+      }
+    
+      handleChange = (event) => {
+        this.setState({ searchTerm: event.target.value })
+      }
+    
+render () 
+    {return (<header>
         <NavLink to='/popular'>
             <span className="popular">Peliculas populares</span>
         </NavLink>
@@ -23,9 +47,12 @@ const Header = () => {
         <NavLink to='/top_rated'>
             <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
-        {/* <SearchBar /> */}
+        <SearchBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
      
-    </header>)
+    </header>
+    )
+    
+}
 }
 
 export default Header;

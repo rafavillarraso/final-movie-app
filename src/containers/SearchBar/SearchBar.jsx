@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Movie from '../../components/Movie/Movie';
 
 
 const SearchBar = (props) =>{
+
         return (
-            <div className='contenedorbuscar'>
+           <>
+           <div className='contenedorbuscar'>
             <form className='buscar' onSubmit={props.handleSubmit}>
                 <input 
                     name="search"
@@ -13,7 +16,7 @@ const SearchBar = (props) =>{
                             />
                     </form>
                     </div>
-        
+            </>
                 )
             }
             
