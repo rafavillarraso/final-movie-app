@@ -8,27 +8,27 @@ import Movie from '../../components/Movie/Movie';
 
 
 class Header extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-          movies: ([]),
-          searchTerm:('')
-        }
-    }
-    handleSubmit = (event) => {
-        event.preventDefault();
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //       movies: ([]),
+    //       searchTerm:('')
+    //     }
+    // }
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
     
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8d9fc93da62143ba1f2babedea9cc4e&language=en-US&page=1&include_adult=false&query=${this.state.searchTerm}`)
-        .then(data => data.json())
-        .then(data => {
-            console.log(data);
-            this.setState({movies: [...data.results]})                
-        })
-      }
+    //     fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8d9fc93da62143ba1f2babedea9cc4e&language=en-US&page=1&include_adult=false&query=${this.state.searchTerm}`)
+    //     .then(data => data.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         this.setState({movies: [...data.results]})                
+    //     })
+    //   }
     
-      handleChange = (event) => {
-        this.setState({ searchTerm: event.target.value })
-      }
+    //   handleChange = (event) => {
+    //     this.setState({ searchTerm: event.target.value })
+    //   }
     
 render () 
     {return (<header>
@@ -47,7 +47,7 @@ render ()
         <NavLink to='/top_rated'>
             <span className="top_rated">Peliculas más votadas</span>
         </NavLink>
-        <SearchBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        {/* <SearchBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} /> */}
      
     </header>
     )

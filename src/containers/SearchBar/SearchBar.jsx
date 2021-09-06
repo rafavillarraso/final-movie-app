@@ -12,6 +12,7 @@ const SearchBar = (props) =>{
                     name="search"
                     type="search" 
                     placeholder="buscar..."
+                    value={props.searchTerm}
                     onChange={props.handleChange}
                             />
                     </form>
