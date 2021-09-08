@@ -37,9 +37,6 @@ class App extends React.Component {
         <Route path='/:movieType' exact>
           <Movies searchData={searchData} />
         </Route> 
-        <Route path='/inicio'>
-          <Inicio />
-      </Route>
       </Switch>
     </div>
     </BrowserRouter>
