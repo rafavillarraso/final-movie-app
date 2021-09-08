@@ -1,23 +1,36 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Movie from '../../components/Movie/Movie';
+import { generatePath, NavLink, useHistory } from 'react-router-dom'; 
+
 
 
 const SearchBar = (props) =>{
+    // const [query, setQuery] = useState()
+    // const history = useHistory()
 
-        return (
-           <>
-           <div className='contenedorbuscar'>
+    // handleChange = (e) => {
+    //     e.preventDefault();
+    //     useEffect (()=>{
+    //         history.replace({
+
+    //         })
+    //     })
+
+    // }
+    
+    return (
+        <div className='contenedorbuscar'>
             <form className='buscar' onSubmit={props.handleSubmit}>
                 <input 
                     name="search"
                     type="search" 
                     placeholder="buscar..."
-                    value={props.searchTerm}
                     onChange={props.handleChange}
+                    value={props.query}
                             />
+
                     </form>
                     </div>
-            </>
                 )
             }
             

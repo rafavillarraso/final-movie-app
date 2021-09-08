@@ -1,0 +1,8 @@
+@import '../../colors.scss';
+
+.movies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: $grisclaro;
+    padding: 0 40px;
+}

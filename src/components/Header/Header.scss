@@ -27,10 +27,11 @@ header {
     align-items: center;
     flex-direction: column;
     padding: 1em;
+    background-color: $mostaza;
 
 }
 .buscar {
-    width: 250px;
+    width: 400px;
     input {
     display: flex;
     // padding: 0.7em 0 0.7em 0;
