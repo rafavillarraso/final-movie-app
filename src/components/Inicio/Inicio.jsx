@@ -10,7 +10,7 @@ const Inicio = () => {
             <div className="col-6">
                 <div className='inicio'>
                     <h1>Filtra películas con el menú superior o con el formulario de búsqueda</h1>
-                    <p>Bienvenido a la app de búsqueda de pelis. Esta web app ha sido realizada con las tecnologías de React, React-router, React-redux y formateada por Sass</p>
+                    <p>Bienvenido a la app de búsqueda de pelis. Esta web app ha sido realizada con las tecnologías de React, React-router, React-redux y formateada con Bootstrap y Sass</p>
                     <p>Por qué no empezar por ver lo que hay hoy en cartelera:</p>
                     <Link to='/now_playing'><button type="button" class="btn btn-dark"> Ahora en cartelera </button></Link>
                 </div>

@@ -11,9 +11,9 @@ class Header extends React.Component {
     
 render () 
     {return (<header>
-        <NavLink to='/'>
+        {/* <NavLink to='/inicio'>
             <span className="popular">INICIO</span>
-        </NavLink>
+        </NavLink> */}
 
         <NavLink to='/popular'>
             <span className="popular">Peliculas populares</span>

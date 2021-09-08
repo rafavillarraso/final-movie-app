@@ -1,14 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Movies from './components/Movies/Movies';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar/SearchBar';
 import Inicio from './components/Inicio/Inicio';
-import MoviesResults from './components/Results/MoviesResults';
-import { render } from '@testing-library/react';
-import Movie from './components/Movie/Movie';
+
 
 class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      movies: [],
+      searchData: {searchTerm: 'popular'}
+    }
+}
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+  }
+
+  handleChange = (event) => {
+    this.setState({...this.state.searchData, searchTerm: event.target.value});
+
+  }
+
+  render(){
+  let searchData = {searchTerm: this.state.searchTerm}
+  return (
+    <div>
+    <BrowserRouter>
+    <div>
+      <Header />
+      <SearchBar handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+      <Switch>
+        <Route path='/:movieType' exact>
+          <Movies searchData={searchData} />
+        </Route> 
+        <Route path='/inicio'>
+          <Inicio />
+      </Route>
+      </Switch>
+    </div>
+    </BrowserRouter>
+    </div>
+  );
+}
+}
+
+export default App;
+
+
+// import React from 'react';
+// import Header from './components/Header/Header';
+// import Movies from './components/Movies/Movies';
+// import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import SearchBar from './components/SearchBar/SearchBar';
+// import Inicio from './components/Inicio/Inicio';
+// import MoviesResults from './components/Results/MoviesResults';
+// import { render } from '@testing-library/react';
+// import Movie from './components/Movie/Movie';
+
+// class App extends React.Component {
 //   constructor() {
 //     super()
 //     this.state = {
@@ -34,24 +87,24 @@ class App extends React.Component {
 //   }
 
  
-  render(){
-  return (
-    <div>
-    <BrowserRouter>
-    <div>
-      <Header />
-      <SearchBar />
-      <Switch>
-        <Route path='/' component={Inicio} exact/>
-        <Route path='/:movieType' component={Movies} exact/>
-        <Route path='/:searchTerm' component={MoviesResults} />
+//   render(){
+//   return (
+//     <div>
+//     <BrowserRouter>
+//     <div>
+//       <Header />
+//       <SearchBar />
+//       <Switch>
+//         <Route path='/' component={Inicio} exact/>
+//         <Route path='/:movieType' component={Movies} exact/>
+//         <Route path='/:searchTerm' component={MoviesResults} />
         
-      </Switch>
-    </div>
-    </BrowserRouter>
-    </div>
-  );
-}
-}
+//       </Switch>
+//     </div>
+//     </BrowserRouter>
+//     </div>
+//   );
+// }
+// }
 
-export default App;
+// export default App;
